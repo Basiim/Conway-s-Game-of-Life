@@ -101,30 +101,39 @@ How to detect boundary cases:
 This was perhaps the hardest task of this code and it took me days to figure out how to finally do it. For this task I used the address of pointer and stored it in two variables (ptr_addr, address) I kept the value of variable “address” the same and incriminated the value of ptr_addr in each iteration of the loop.
 
 /*********** Top left ***************/
+
 if((ptr_addr-address)==0)
    
 /*********** Top right ***************/
+
 if(((ptr_addr+1)-address)==n)
    
 /************ Bottom left ***************/
+
 if((ptr_addr-address)==n*(m-1))
    
 /*************** Bottom Right*************/
+
 if(((ptr_addr+1)-(address))==m*n)
 
 /************ Top ******************/
+
 if(((ptr_addr-(address-1))<n)&&(ptr_addr-address!=0)&&(flag==1))
 
 /************ left ******************/
+
 if((((ptr_addr-(address))%n)==0)&&(ptr_addr-(address)!=(n*m)-n)&&(flag==2))
    
 /************ Bottom ******************/
+
 if(((address+(m*n-n))<ptr_addr)&&((address+(m*n-1))>ptr_addr))
 
 /************ Right ******************/
+
 if((((ptr_addr-(address-1))%n)==0)&&(ptr_addr-(address-1) != n)&&(ptr_addr-(address-1) != n*m))
    
  /**************** Mid *******************/
+ 
 if((ptr_addr-(address-1)>=n+2)&&(ptr_addr-(address)<=n*m-(n+2))&&((ptr_addr-(address-1))%n!=0)&&((ptr_addr-(address))%n!=0))
 
 
